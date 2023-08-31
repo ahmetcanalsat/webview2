@@ -1,0 +1,22 @@
+2023/05/31-00:24:22.738 712c Reusing MANIFEST C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.exe.WebView2\EBWebView\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/05/31-00:24:22.739 712c Recovering log #3
+2023/05/31-00:24:22.743 712c Reusing old log C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.exe.WebView2\EBWebView\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2023/05/31-00:24:25.378 7b6c Level-0 table #5: started
+2023/05/31-00:24:25.382 7b6c Level-0 table #5: 126868 bytes OK
+2023/05/31-00:24:25.383 7b6c Delete type=0 #3
+2023/05/31-00:24:25.384 55dc Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/05/31-00:24:26.085 7b6c Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/05/31-00:24:26.085 7b6c Manual compaction at level-1 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/05/31-00:24:26.278 7b6c Manual compaction at level-0 from '\x00\x09\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/05/31-00:24:26.279 7b6c Manual compaction at level-1 from '\x00\x09\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/05/31-00:24:26.404 7350 Level-0 table #7: started
+2023/05/31-00:24:26.406 7350 Level-0 table #7: 17131 bytes OK
+2023/05/31-00:24:26.408 7350 Delete type=0 #4
+2023/05/31-00:24:26.409 712c Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/05/31-00:24:26.409 712c Manual compaction at level-1 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0c\x01 \x03\x00\x00\x00\x00\x00\x00\xf0?\x00\x04\x02\x01\x17\x00s\x00e\x00r\x00v\x00i\x00c\x00e\x00:\x00t\x00o\x00p\x00b\x00a\x00r\x00:\x00f\x00a\x00l\x00l\x00b\x00a\x00c\x00k\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 2475 : 1
+2023/05/31-00:24:26.409 712c Compacting 1@1 + 1@2 files
+2023/05/31-00:24:26.411 712c Generated table #8@1: 279 keys, 12185 bytes
+2023/05/31-00:24:26.411 712c Compacted 1@1 + 1@2 files => 12185 bytes
+2023/05/31-00:24:26.412 712c compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/05/31-00:24:26.413 712c Delete type=2 #7
+2023/05/31-00:24:26.413 712c Manual compaction at level-1 from '\x00\x0c\x01 \x03\x00\x00\x00\x00\x00\x00\xf0?\x00\x04\x02\x01\x17\x00s\x00e\x00r\x00v\x00i\x00c\x00e\x00:\x00t\x00o\x00p\x00b\x00a\x00r\x00:\x00f\x00a\x00l\x00l\x00b\x00a\x00c\x00k\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 2475 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

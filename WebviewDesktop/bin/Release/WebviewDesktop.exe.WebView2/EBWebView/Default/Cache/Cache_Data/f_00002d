@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html>
+<head>
+    <title>PARCMenu</title>
+    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+    <meta name="CODE_LANGUAGE" content="C#">
+    <meta name="vs_defaultClientScript" content="JavaScript">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+    <style>
+        .skin0
+        {
+            border-right: black 2px solid;
+            border-top: black 2px solid;
+            visibility: hidden;
+            border-left: black 2px solid;
+            font-size: 10pt;
+            width: 150px;
+            cursor: default;
+            line-height: 20px;
+            border-bottom: black 2px solid;
+            font-family: Verdana;
+            position: absolute;
+            background-color: menu;
+            text-align: left;
+        }
+        .skin1
+        {
+            border-right: buttonhighlight 2px outset;
+            border-top: buttonhighlight 2px outset;
+            font-size: 10pt;
+            visibility: hidden;
+            border-left: buttonhighlight 2px outset;
+            width: 150px;
+            cursor: default;
+            border-bottom: buttonhighlight 2px outset;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            background-color: menu;
+            text-align: left;
+        }
+        .menuitems
+        {
+            padding-right: 0px;
+            padding-left: 4px;
+        }
+    </style>
+</head>
+<body ms_positioning="GridLayout" style="margin: 0px;" scroll="no" onload="setMenuVisibility();">
+    <div id="menuFolder" class="skin1" width="220">
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="newFolderClicked()">
+            New Folder</div>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="deleteFolderClicked()">
+            Delete Folder</div>
+        <hr>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="javascript:hidemenu();top.ICONTENTFRAME.__doPostBack(gCurControl,'REFRESH:' + gCurNode);">
+            Refresh Folder</div>
+        <hr>
+        <div class="menuitems" onclick="javascript: void(0);">
+            <b>PARCview</b></div>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="newClicked('dis_tr');">
+            &nbsp;&nbsp;New Trend  </div>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="newClicked('dis_cl');">
+            &nbsp;&nbsp;New Centerline</div>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="newClicked('dis_de');">
+            &nbsp;&nbsp;New Data Entry</div>
+        <!-- 
+				<div class="menuitems" url="" onMouseover="highlight()" onMouseout="lowlight()" onClick="newClicked('svg');">&nbsp;&nbsp;New 
+				Waterfall</div> -->
+        <!--	
+			<hr>
+			
+			<div class="menuitems" url="javascript: void(0);" onClick="javascript: void(0);"><b>MACS</b></div>
+			<div class="menuitems" url="" onMouseover="highlight()" onMouseout="lowlight()" onClick="newClicked('dis_hmi_Engineering');">&nbsp;&nbsp;New 
+				HMI Engineering</div>
+			<div class="menuitems" url="" nowrap onMouseover="highlight()" onMouseout="lowlight()" onClick="newClicked('dis_hmi_Summary');">&nbsp;&nbsp;New 
+			    HMI Summary</div>      
+			 <div class="menuitems" url="" onMouseover="highlight()" onMouseout="lowlight()" onClick="openConfigPage();">&nbsp;&nbsp;Configuration
+			    </div>
+			    -->
+    </div>
+    <div id="menuDisplay" class="skin1" width="240">
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="deleteFileClicked()">
+            Delete Display</div>
+        <hr>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="openDisplayNewWindow()">
+            Open in New Window</div>
+        <hr>
+        <div class="menuitems" url="" onmouseover="highlight()" onmouseout="lowlight()" onclick="copyLinkURL()">
+            Copy URL to Clipboard</div>
+    </div>
+    <div id="DivMenuElement" class="skin1">
+        <iframe id="IFRAMEMENUELEMENT" width="100%" height="100%" src="Loading.aspx"></iframe>
+    </div>
+    <form method="post" action="./" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTQzNjg0NTk3ZGSgXsS1+X+d7wpPx5pJq1wgHP9w7AmbwwUkf7eWGsmV5A==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4DEDDFCA" />
+</div>
+    <table id="tblMain" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0"
+        style="border-right: midnightblue 0px solid; border-top: midnightblue 0px solid;
+        left: 0px; border-left: midnightblue 0px solid; border-bottom: midnightblue 0px solid;
+        position: absolute; top: 0px;">
+        <tr valign="middle" style="height: 24px; width: 100%">
+            <td id="tdHeader" nowrap style="font-weight: bold; font-size: 10pt; overflow: hidden;
+                color: white; font-family: Verdana; background-color: black; text-align: center">
+                <span style="float: left; width: 20px">
+                    <input id="cmdShowHideMenu" type="button" value="H" style="font-weight: bold; width: 20px;
+                        color: white; background-color: black" onclick="showHideMenu(this);" />
+                </span><span id="spanTitle" style="text-align: center">
+                    PARCviewWeb</span>
+            </td>
+            <td rowspan="2" style="border-top: midnightblue 0px solid; background-color: white"
+                width="100%">
+                <iframe id="IVIEWFRAME" style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px;
+                    overflow: auto; width: 100%; padding-top: 0px; height: 100%"></iframe>
+            </td>
+        </tr>
+        <tr valign="top" style="height: 100%">
+            <td id="tdContentFrame" onmouseover="javascript:startMenuHover();" onmouseout="javascript:stopMenuHover();"
+                width="250px"
+                style="border-right: midnightblue 0px double; border-top: midnightblue 0px solid;
+                width: 250px">
+                <iframe id="ICONTENTFRAME" style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px;
+                    padding-top: 0px; overflow: auto; scrolling: auto; height: 100%; width: 250px"
+                    src="MenuTree.aspx"></iframe>
+            </td>
+        </tr>
+    </table>
+    </form>
+    <script language="javascript">
+<!--
+
+
+
+		var menuskin = "skin1"; // skin0, or skin1
+			var display_url = 0; // Show URLs in status bar?
+			
+			var gCurControl;
+			var gCurNode;
+			var gCurPath;
+			var gCurFile;
+			var gCurType;
+			
+			
+			var menuVisible = true;
+			var menuWidth = "250px";
+			var menuTitle = document.getElementById("spanTitle").innerHTML;
+			
+			var hoverMenu = false;
+			var menuHovering = false;
+			var hideMenu = false;
+			
+			function showHideMenu(button)
+			{
+			
+		 
+				if(menuVisible == true)
+				{
+				
+					menuVisible = false;
+					button.value = "S";
+				
+				 
+					hideContentMenu();
+	 
+				}
+				else
+				{
+					menuVisible = true;
+					button.value = "H";
+					
+					
+					showContentMenu();
+					
+				
+				}
+				
+				return true;
+				
+				 
+			
+			}
+			
+			function setMenuVisibility()
+			{
+			
+		 
+				if(menuVisible == false)
+				{
+					
+					document.getElementById("cmdShowHideMenu").value = "S";
+				
+				 
+					hideContentMenu();
+	 
+				}
+				else
+				{
+					
+					document.getElementById("cmdShowHideMenu").value = "H";
+					
+				
+					showContentMenu();
+					
+				
+				}
+				
+				return true;
+				
+				 
+			
+			}
+			
+			function hideContentMenu()
+			{
+					document.getElementById("ICONTENTFRAME").style.visibility = "hidden";
+					document.getElementById("spanTitle").style.visibility = "hidden";
+					
+					document.getElementById("spanTitle").innerHTML = "";
+				 
+					document.getElementById("tdContentFrame").width = "20px"; // = button.style.width;
+					document.getElementById("tdContentFrame").style.width  = "20px"; //= button.style.width;
+					
+					document.getElementById("tdHeader").width = "20px";
+					document.getElementById("tdHeader").style.width  = "20px"; 
+					
+					document.getElementById("ICONTENTFRAME").style.width = "20px"; //button.style.width;
+			
+			
+			}
+			
+			
+			function showContentMenu()
+			{
+			
+				document.getElementById("ICONTENTFRAME").style.visibility = "visible";
+				document.getElementById("spanTitle").style.visibility = "visible";
+				
+				document.getElementById("spanTitle").innerHTML = menuTitle;
+					
+				document.getElementById("tdContentFrame").width = menuWidth;
+				document.getElementById("tdContentFrame").style.width = menuWidth;
+				
+				document.getElementById("tdHeader").width = menuWidth;
+				document.getElementById("tdHeader").style.width  = menuWidth; 
+				
+				document.getElementById("ICONTENTFRAME").style.width = menuWidth;
+			
+			
+			}
+			
+			
+			function startMenuHover()
+			{
+			
+				hideMenu = false;
+				if(menuVisible == false && !(menuHovering == true))
+				{
+					hoverMenu = true;
+					setTimeout('doMenuHover()', 600);
+				
+				}
+			
+			
+			
+			}
+			
+			function doMenuHover()
+			{
+			
+				if(menuVisible == false && !(menuHovering == true) && hoverMenu == true)
+				{
+					//hoverMenu = true;
+					menuHovering = true;
+					showContentMenu();
+				
+				}
+			
+			
+			
+			}
+			
+			
+			function stopMenuHover()
+			{
+			
+				hoverMenu = false;
+				 
+				
+				if(menuVisible == false && menuHovering == true)
+				{
+					
+					//hideContentMenu();
+					hideMenu = true;
+					
+					setTimeout('doStopMenuHover()', 600);
+				
+				}
+			
+			
+			}
+			
+			function doStopMenuHover()
+			{
+			
+				
+			
+				
+				if(menuVisible == false && menuHovering == true && (hideMenu==true))
+				{
+					hoverMenu = false;
+					menuHovering = false;
+					hideContentMenu();
+					
+				
+				
+				}
+			
+			
+			}
+			
+			
+			
+			
+			function openConfigPage() {
+			
+				hidemenu();
+			    window.showModalDialog('', '', 'resizable:1; scrollbars:1; dialogWidth:1000px; dialogHeight:600px;');
+			    // POST BACK TO THE SERVER HERE.
+			    // REFRESHES THE PAGE AFTER CONFIGURATION SETTINGS ARE MODIFIED.
+			}
+			
+			function showmenu(menu, control, node, path, file, type, clientX, clientY) 
+			{
+			
+			
+				hidemenu();
+			 
+				gCurControl = control;
+				gCurNode = node;
+				gCurPath = path;
+				gCurFile = file;
+				gCurType = type;
+		 
+				var rightedge = document.body.clientWidth-clientX;
+				var bottomedge = document.body.clientHeight-clientY;
+				
+			 
+				if (rightedge < menu.offsetWidth)
+					document.getElementById(menu).style.left = document.body.scrollLeft + clientX - document.getElementById(menu) .offsetWidth;
+				else
+					document.getElementById(menu).style.left = document.body.scrollLeft + clientX;
+				if (bottomedge < document.getElementById(menu) .offsetHeight)
+					document.getElementById(menu).style.top = document.body.scrollTop + clientY - document.getElementById(menu) .offsetHeight;
+				else
+					document.getElementById(menu).style.top = document.body.scrollTop + clientY;
+					document.getElementById(menu).style.visibility = "visible";
+					document.getElementById(menu).style.zIndex = 999999;
+			 
+				return false;
+			}
+			
+			//hide all the menus
+			function hidemenu() {
+				document.getElementById("menuFolder").style.visibility = "hidden";
+				document.getElementById("menuDisplay").style.visibility = "hidden";
+				
+				document.getElementById("DivMenuElement").style.visibility = "hidden";
+				document.getElementById("IFRAMEMENUELEMENT").src = "Loading.aspx";
+				
+				
+			}
+			function highlight() {
+				if (event.srcElement.className == "menuitems") {
+					event.srcElement.style.backgroundColor = "highlight";
+					event.srcElement.style.color = "white";
+					if (display_url)
+						window.status = event.srcElement.url;
+				}
+			}
+			function lowlight() {
+				if (event.srcElement.className == "menuitems") {
+					event.srcElement.style.backgroundColor = "";
+					event.srcElement.style.color = "black";
+					window.status = "";
+				}
+			}
+		 		
+			function saveCompleted(control, node, path, file, type)
+			{
+			
+				//call menu to refresh
+				//__doPostBack(control,'LOADREFRESH:' + node + ',' + path + ',' + file + ',' + type);
+			}
+			
+			
+			function openDisplayNewWindow()
+			{
+				hidemenu();
+				loadViewer(gCurNode, gCurPath, gCurFile, gCurType, '', 'NEW');
+			
+			}
+		
+		
+		    function copyLinkURL()
+		    {
+		        hidemenu();
+		        var viewerURL = getViewerURL(gCurNode, gCurPath, gCurFile, gCurType);
+		    
+		         window.clipboardData.setData("Text",viewerURL);
+		    }
+		    
+		    
+        _basePARCViewWebViewer = 'http://192.168.3.215/PARCViewWeb/Viewer.aspx'.toLowerCase();
+		    function getViewerURL(id, path,filename, type)
+		    {
+		        	var viewerURL = "";
+					if(type=="dis_tr" || type=="dis_tr1" || type=="dis_tr"	|| type=="svg" || type=="dis_al" || type=="dis_cl" || type=="dis_wf" || type=="dis_lb" || type=="dis_de" || type=="xaml" || type=="baml" || type=="dis_xy" || type=="dis_hist" || type=="dis_tb" || type=="dis_pr" || type=="dis_rpt2")
+					{
+						viewerURL='http://192.168.3.215/PARCViewWeb/Viewer.aspx' + '?TYPE=' + type + '&PATH=' + path + '&FILENAME=' + filename;
+					}
+					else if(type=="dis_rpt")
+					{
+						viewerURL='http://192.168.3.215/PARCViewWeb/ReportViewer.aspx' + '?TYPE=' + type + '&PATH=' + path + '&FILENAME=' + filename;
+					}
+					else if(type=="dis_hmi" || type=="dis_hmis")
+					{  
+						 viewerURL=''  + '?PATH=' + path + '&FILENAME=' + filename + '&TYPE=' + type;
+					}
+                    	else if(type=="pdf")
+					{  
+						 viewerURL='http://192.168.3.215/parcmenu/PdfHost.ashx'  + '?PATH=' + path + '&FILENAME=' + filename + '&TYPE=' + type;
+					}
+					else
+					{
+						viewerURL="blank.htm";
+					}
+					
+					return viewerURL;
+		    }
+			
+			function	loadViewer(id, path,filename, type, modDate,viewMode)
+			{ 
+
+            
+
+				try
+				{
+
+                        var loaded = false;
+					    var viewerURL = getViewerURL(id, path,filename, type);
+					
+					    if(viewMode=="SINGLETREE")
+					    {
+
+
+                          
+
+				
+					
+						    if(document.getElementById("IVIEWFRAME") != null)
+						    { 
+                              var currentURL = document.getElementById("IVIEWFRAME").src;
+                              //try loading the display through javascript so we can avoid reloading the entire xbap
+                                if (currentURL != null && currentURL.length >= _basePARCViewWebViewer.length && currentURL.toLowerCase().substr(0, _basePARCViewWebViewer.length) == _basePARCViewWebViewer) {
+
+                                    type = type.toLowerCase();
+                                    if (type == "dis_tr" || type == "dis_tr1" || type == "dis_tr" || type == "svg" || type == "dis_al" || type == "dis_cl" || type == "dis_wf" || type == "dis_lb" || type == "dis_de" || type == "xaml" || type == "baml" || type == "dis_xy" || type == "dis_hist" || type == "dis_tb" || type == "dis_pr" || type == "dis_rpt2") {
+                                        try {
+                                            //alert("Current src = " + document.getElementById("IVIEWFRAME").src);
+                                            document.getElementById("IVIEWFRAME").contentWindow.LoadDisplay(path, filename, type);
+                                            loaded = true;
+                                        }
+                                        catch (err2) {
+                                            alert(err2);
+                                        }
+                                    }
+
+                                }
+
+
+                               if(!loaded)
+                               {
+							    
+                                    document.getElementById("IVIEWFRAME").src = viewerURL;		
+                                
+                               }				   
+						    }
+						    else
+						    {
+							    alert("Couldn't locate IFRAME to load object");
+						    }
+                            
+                           
+					    }
+					    else
+					    {
+						    var	viewer	= window.open(viewerURL,"_blank","directories=no, location=no, menubar=yes, resizable=yes, scrollbars=yes, status=no, toolbar=no, width=800, height=600, left=100, top=100");
+				
+					    }
+
+                    
+						
+				}
+				catch(err)
+				{
+					alert("ERROR: "+err.message);
+				}
+					
+			}
+			
+			
+			
+			function showMenuElement(source, width, height, clientX, clientY)
+			{
+			
+			
+				
+				var f = "DivMenuElement";
+			
+				document.getElementById("IFRAMEMENUELEMENT").src = source;
+			
+				document.getElementById("IFRAMEMENUELEMENT").width=width;
+				document.getElementById("IFRAMEMENUELEMENT").height=height;
+				document.getElementById("IFRAMEMENUELEMENT").style.width=width;
+				document.getElementById("IFRAMEMENUELEMENT").style.height=height;
+				document.getElementById(f).width=width;
+				document.getElementById(f).height=height;
+				document.getElementById(f).style.width=width;
+				document.getElementById(f).style.height=height;
+				
+				var rightedge = document.body.clientWidth-clientX;
+				var bottomedge = document.body.clientHeight-clientY;
+				
+				if (rightedge < f.offsetWidth)
+					document.getElementById(f).style.left = document.body.scrollLeft + clientX - document.getElementById(f).offsetWidth;
+				else
+					document.getElementById(f).style.left = document.body.scrollLeft + clientX;
+				if (bottomedge < document.getElementById(f).offsetHeight)
+					document.getElementById(f).style.top = document.body.scrollTop + clientY - document.getElementById(f).offsetHeight;
+				else
+					document.getElementById(f).style.top = document.body.scrollTop + clientY;
+					
+					document.getElementById(f).style.visibility = "visible";
+					document.getElementById(f).style.zIndex = 9999999;
+			
+			
+			}
+			
+			function hideMenuElement()
+			{
+			
+				var f = "DivMenuElement";
+				document.getElementById(f).style.visibility = "hidden";
+				document.getElementById("IFRAMEMENUELEMENT").src = "Loading.aspx";
+			
+			}
+			
+			function showElementError(errorMessage)
+			{
+			
+				
+			
+				var f = "DivMenuElement";
+			
+			
+				var width="240px";
+				var height="150px";
+			
+			
+				document.getElementById("IFRAMEMENUELEMENT").width=width;
+				document.getElementById("IFRAMEMENUELEMENT").height=height;
+				document.getElementById("IFRAMEMENUELEMENT").style.width=width;
+				document.getElementById("IFRAMEMENUELEMENT").style.height=height;
+				document.getElementById(f).width=width;
+				document.getElementById(f).height=height;
+				document.getElementById(f).style.width=width;
+				document.getElementById(f).style.height=height;
+			
+				document.getElementById("IFRAMEMENUELEMENT").src = "Error.aspx?MESSAGE=" + errorMessage;
+			
+			}
+			
+			
+			function newFolderClicked()
+			{
+			
+				hidemenu();
+				
+				try
+					{
+						var newURL = "";
+						var width="220px";
+						var height="100px";
+						 
+						newURL='newFolder.aspx'  + '?PATH=' + gCurPath  + '&NODE=' + gCurNode + '&CONTROL=' + gCurControl
+						
+						showMenuElement(newURL, width, height, event.clientX, event.clientY);
+							
+					}
+					catch(err)
+					{
+						alert("ERROR: "+err.message);
+					}
+					
+					return false;
+			}
+			
+			function deleteFolderClicked()
+			{
+			
+				hidemenu();
+				
+				try
+					{
+						var newURL = "";
+						var width="280px";
+						var height="110px";
+						 
+						newURL='deleteFolder.aspx'  + '?PATH=' + gCurPath  + '&NODE=' + gCurNode + '&CONTROL=' + gCurControl
+						
+						showMenuElement(newURL, width, height, event.clientX, event.clientY);
+							
+					}
+					catch(err)
+					{
+						alert("ERROR: "+err.message);
+					}
+					
+					return false;
+			}
+			
+			
+			function deleteFileClicked()
+			{
+			
+				hidemenu();
+				
+				try
+					{
+						var newURL = "";
+						var width="280px";
+						var height="110px";
+						 
+						newURL='deleteDisplay.aspx'  + '?PATH=' + gCurPath  + '&NODE=' + gCurNode + '&CONTROL=' + gCurControl + '&FILE=' + gCurFile+ '&TYPE=' + gCurType;
+						
+						 
+						
+						showMenuElement(newURL, width, height, event.clientX, event.clientY);
+							
+					}
+					catch(err)
+					{
+						alert("ERROR: "+err.message);
+					}
+					
+					return false;
+			}
+			
+			function newClicked(type)
+			{
+			
+				hidemenu();
+			
+				try
+					{
+						var newURL = "";
+						var width=220;
+						var height=100;
+						if(type=="dis_tr" || type=="dis_tr1" || type=="dis_tr"	|| type=="svg" || type=="dis_al" || type=="dis_cl" || type=="dis_wf" || type=="dis_lb" || type=="dis_de")
+						{
+							width=220;
+							height=100;
+							newURL='http://192.168.3.215/PARCViewWeb/New.aspx' + '?PATH=' + gCurPath  + '&NODE=' + gCurNode + '&CONTROL=' + gCurControl + '&TYPE=' + type;
+							
+							showMenuElement(newURL, width, height, event.clientX, event.clientY);
+						
+							
+						}
+							else if(type=="dis_hmi_Engineering")
+						{
+							width=400;
+							height=300;
+							newURL='' + '?PATH=' + gCurPath  + '&NODE=' + gCurNode + '&CONTROL=' + gCurControl + '&TYPE=' + type;					
+							
+							showMenuElement(newURL, width, height, event.clientX, event.clientY);
+						}
+						
+						else if(type=="dis_hmi_Summary")
+						{
+							width=400;
+							height=300;
+							newURL='' + '?PATH=' + gCurPath  + '&NODE=' + gCurNode + '&CONTROL=' + gCurControl + '&TYPE=' + type;
+							
+							showMenuElement(newURL, width, height, event.clientX, event.clientY);
+						}
+						else
+						{
+							alert("New page isn't set");
+						}
+						
+							
+					}
+					catch(err)
+					{
+						alert("ERROR: "+err.message);
+					}
+			
+			
+			}
+			
+			function newFolderSaved(control, node, path, newPath)
+			{
+				top.ICONTENTFRAME.newFolderSaved(control, node, path, newPath);
+			}
+			
+			
+			function folderDeleted(control, node, path, newPath)
+			{
+				top.ICONTENTFRAME.folderDeleted(control, node, path, newPath);
+			}
+			
+			function fileDeleted(control, node, path, file, type)
+			{
+				top.ICONTENTFRAME.fileDeleted(control, node, path, file, type);
+			}
+			
+			
+			function saveCompleted(control, node, path, file, type)
+			{
+				top.ICONTENTFRAME.saveCompleted(control, node, path, file, type);
+			}
+		
+		
+	
+		function replace(str, original, replacement) {
+			var result;
+			result = "";
+			while(str.indexOf(original) != -1) {
+				if (str.indexOf(original) > 0)
+					result = result + str.substring(0, str.indexOf(original)) + replacement;
+				else
+					result = result + replacement;
+					str = str.substring(str.indexOf(original) + original.length, str.length);
+			}
+			return result + str;
+		}
+
+		
+	 
+
+-->
+    </script>
+</body>
+</html>

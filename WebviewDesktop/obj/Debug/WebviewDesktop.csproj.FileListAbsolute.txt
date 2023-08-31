@@ -1,0 +1,41 @@
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.exe.config
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.exe
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.pdb
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.AssemblyReference.cache
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.Form1.resources
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.Properties.Resources.resources
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.GenerateResource.cache
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.CoreCompileInputs.cache
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.CopyComplete
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.exe
+C:\Users\923400221916\source\repos\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.pdb
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.exe.config
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.exe
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\WebviewDesktop.pdb
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.AssemblyReference.cache
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.Form1.resources
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.Properties.Resources.resources
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.GenerateResource.cache
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.CoreCompileInputs.cache
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.csproj.CopyComplete
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.exe
+C:\Users\Emre Mert\Desktop\WebviewDesktop\WebviewDesktop\obj\Debug\WebviewDesktop.pdb
